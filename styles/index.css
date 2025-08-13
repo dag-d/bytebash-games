@@ -1,14 +1,12 @@
 /* CSS Variables for Theme */
 :root {
-  --bg-dark: #0f0f1c;
-  --neon-blue: #00ffe0;
-  --neon-pink: #ff00c8;
-  --neon-green: #00ff88;
-  --text-light: #f0f0f0;
-  --font-pixel: 'Press Start 2P', monospace;
-  --card-bg: #1a1a2e;
-  --btn-bg: #1f1f2f;
-  --btn-hover: #29294d;
+  --bg-color: #0d0d0d;
+  --text-color: #f2f2f2;
+  --accent-color: #00ffff;
+  --font-pixel: 'Press Start 2P', cursive;
+  --nav-icon-size: 32px;
+  --nav-icon-hover:#f2f2f2;
+  --btn-hover: #19193d;
 }
 
 /* Reset and Base Styles */
@@ -19,98 +17,66 @@
 }
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: var(--font-pixel);
   line-height: 1.6;
   padding-bottom: 5rem;
 }
 
-/* Header */
 header {
-  background-color: var(--card-bg);
-  padding: 1rem;
+  padding: var(--section-padding);
   text-align: center;
-  border-bottom: 2px solid var(--neon-blue);
 }
 
-.logo {
-  font-size: 1.5rem;
-  color: var(--neon-pink);
+header h1 {
+  font-size: 2.5rem;
+  color: var(--highlight-color);
   margin-bottom: 0.5rem;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+header p {
+  font-size: 1rem;
+  color: var(--accent-color)
 }
 
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-size: 0.8rem;
-  transition: color 0.3s ease;
-}
-
-nav a.active,
-nav a:hover {
-  color: var(--neon-blue);
-  text-decoration: underline;
+section{
+  padding:var(--section padding)
 }
 
 /* Main Sections */
-main {
-  padding: 2rem 1rem;
-}
-
-section {
-  margin-bottom: 2.5rem;
-}
-
-h2 {
-  color: var(--neon-pink);
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-p {
-  font-size: 0.75rem;
-  margin-bottom: 1rem;
+.latest-game,
+.featured-games{
+  display: flex;
+  flex-wrap:wrap;
+  gap:1
 }
 
 /* Game Cards */
 .game-card {
-  background-color: var(--card-bg);
-  padding: 1rem;
-  border: 2px solid var(--neon-blue);
+  background-color: #1a1a1a;
+  border: 2px solid var(--accent-color);
   border-radius: 8px;
-  margin-bottom: 1rem;
+  padding: 1rem;
+  max-width: 300px;
+  text-align: center;
 }
 
 .game-card h3 {
-  color: var(--neon-green);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
+  color: var(--highlight-color);
 }
 
 /* Buttons */
 .buttons {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  background-color: var(--btn-bg);
-  color: var(--text-light);
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--neon-blue);
-  text-decoration: none;
-  font-size: 0.7rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-main);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -118,48 +84,28 @@ p {
   transform: scale(1.05);
 }
 
-.btn.secondary {
-  border-color: var(--neon-pink);
-}
-
-.btn.neon {
-  border-color: var(--neon-green);
-  color: var(--neon-green);
-}
-
-/* Event Section */
-.event strong {
-  color: var(--neon-green);
-}
-
-.event em {
-  color: var(--neon-pink);
-}
-
 /* Footer */
 footer {
-  background-color: var(--card-bg);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.6rem;
-  color: #888;
-  border-top: 2px solid var(--neon-blue);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  border-top: 2px solid var(--accent-color);
+}
+
+.nav-icon {
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+  filter: brightness(1.2);
+  transition: transform 0.2s ease;
+}
+
+.nav-icon:hover {
+  transform: scale(1.2);
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .buttons {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-}
