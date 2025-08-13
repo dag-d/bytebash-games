@@ -6,7 +6,8 @@
   --font-pixel: 'Press Start 2P', cursive;
   --nav-icon-size: 32px;
   --nav-icon-hover:#f2f2f2;
-  --btn-hover: #19193d;
+  --btn-hover: #26268c;
+  --footer-bgd:#a5c0da;
 }
 
 /* Reset and Base Styles */
@@ -86,6 +87,7 @@ section{
 
 /* Footer */
 footer {
+  background-color: var(--footer-bgd);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -97,6 +99,7 @@ footer {
 }
 
 .nav-icon {
+  color: aliceblue;
   width: var(--nav-icon-size);
   height: var(--nav-icon-size);
   filter: brightness(1.2);
@@ -105,6 +108,7 @@ footer {
 
 .nav-icon:hover {
   transform: scale(1.2);
+  color: #f2f2f2;
 }
 
 /* Responsive Design */
