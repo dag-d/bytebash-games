@@ -109,3 +109,81 @@ footer {
 
 /* Responsive Design */
 
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .latest-game,
+  .featured-games {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-card {
+    max-width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .game-card {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .buttons {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
