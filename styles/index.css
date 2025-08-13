@@ -21,6 +21,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-pixel);
+  font-size: 1rem;
   line-height: 1.6;
   padding-bottom: 5rem;
 }
@@ -52,22 +53,29 @@ section{
   flex-wrap:wrap;
   gap:1
 }
+.text-info{
+  text-align: center;
+}
 
 /* Game Cards */
 .game-card {
   background-color: #1a1a1a;
   border: 2px solid var(--accent-color);
   border-radius: 8px;
-  padding: 1rem;
-  max-width: 300px;
+  padding: 20px;
+  max-width: 100px;
   text-align: center;
 }
 
 .game-card h3 {
-  margin: 0.5rem 0;
+  margin: 20px;
   color: var(--highlight-color);
+  max-width:100px
 }
 
+.game-info{
+  text-align: center;
+}
 /* Buttons */
 .buttons {
   background-color: var(--accent-color);
