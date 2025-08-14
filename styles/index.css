@@ -8,6 +8,17 @@
   --nav-icon-hover:#f2f2f2;
   --btn-hover: #262636;
   --footer-bgd:#a5c0da;
+
+  --accent: #c800ff;
+  --accent-hover: #2bd8b9;
+
+  --radius: 12px;
+  --transition-fast: 0.3s;
+  --transition-slow: 0.6s;
+
+  --glow-purple: 0 0 12px #c800ff;
+  --glow-lime: 0 0 12px #aaff00;
+  --glow-blue: 0 0 12px #258e96;
 }
 
 /* Reset and Base Styles */
@@ -57,6 +68,7 @@ section{
   text-align: center;
   padding:10px;
   margin:15px;
+  border: 10px;
 }
 
 .availability {
@@ -89,16 +101,19 @@ section{
   flex-wrap: wrap; 
 }
 .game-card {
-  background-color: #1a1a1a;
- border: 2px solid #00ffff;
-  border-radius: 8px;
-  padding: 1rem; 
-  max-width: 700px;
-  text-align: center;
+   background-color: #1a1a1a;
+   border: 2px solid #00ffff;
+   border-radius: 8px;
+   padding: 1rem; 
+   max-width: 700px;
+   text-align: center;
+   display: flex;
+   gap: 20px; 
+   justify-content: center; 
+   flex-wrap: wrap
 }
-
 .game-card img{
-  max-width: 100%;
+  max-width: 200px;
   height:auto;
   display:block;
 }
@@ -162,40 +177,39 @@ section{
   background-color: var(--btn-hover);
 }
 
-
 .btn:hover {
   background-color: var(--btn-hover);
   transform: scale(1.05);
 }
 
-/* Footer */
+/* Footer Navigation */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  background-color: #052f3a;
   display: flex;
   justify-content: space-around;
-  background-color: #111;
-  padding: 20px;
-  gap: 16px;
-  flex-wrap: wrap;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 2px solid var(--neon-purple);
+  box-shadow: var(--glow-purple);
   z-index: 1000;
 }
 
 .nav-icon {
-  width: 32px;
-  height: 32px;
-  filter: brightness(0) invert(1); 
-  transition:transform 0.2s ease;
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(var(--glow-blue));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
 .nav-icon:hover {
-  .nav-icon:hover {
   transform: scale(1.2);
   filter: drop-shadow(var(--glow-purple)) drop-shadow(var(--glow-lime));
 }
-}
+
 /* Responsive Design */
 
 /* Tablet (768px and below) */
