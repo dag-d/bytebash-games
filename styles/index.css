@@ -191,9 +191,10 @@ footer {
 }
 
 .nav-icon:hover {
-  color: #223670;
-   filter: brightness(1.5);
-   transform: scale(1.2);
+  .nav-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(var(--glow-purple)) drop-shadow(var(--glow-lime));
+}
 }
 /* Responsive Design */
 

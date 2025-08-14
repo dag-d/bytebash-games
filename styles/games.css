@@ -1,143 +1,192 @@
+
+/* css variables*/
 :root {
-  --bg-color: #0d0d0d;
-  --card-bg: #1a1a1a;
-  --text-color: #ffffff;
-  --subtext-color: #aaaaaa;
-  --accent-color: #ff2e88;
-  --accent-hover: #e02676;
-  --nav-bg: #111111;
-  --nav-active: #ff2e88;
-  --font-main: 'Segoe UI', sans-serif;
-  --max-width: 1200px;
-  --card-radius: 10px;
-  --transition-speed: 0.3s;
-  --shadow-glow: 0 0 10px #ff2e88;
+  --font-main: 'Press Start 2P', monospace;
+
+  --color-bg: #0a0a0f;
+  --color-card: #1a0020;
+  --color-text: #ffffff;
+  --color-subtext: #cccccc;
+
+  --neon-purple: #c800ff;
+  --neon-lime: #aaff00;
+  --electric-blue: #00f0ff;
+
+  --accent: var(--neon-purple);
+  --accent-hover: #2bd8b9;
+
+  --radius: 12px;
+  --transition-fast: 0.3s;
+  --transition-slow: 0.6s;
+
+  --glow-purple: 0 0 12px var(--neon-purple);
+  --glow-lime: 0 0 12px var(--neon-lime);
+  --glow-blue: 0 0 12px var(--electric-blue);
 }
 
+/* 🧱 Base Styles */
 body {
   font-family: var(--font-main);
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
+  letter-spacing: 1px;
+  overflow-x: hidden;
 }
 
 .container {
-  width: 90%;
-  max-width: var(--max-width);
+  width: 95%;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
 }
 
-header {
+/* 🧠 Header */
+header h1 {
+  font-size: 2em;
   text-align: center;
+  color: var(--neon-purple);
+  text-shadow: var(--glow-purple);
   margin-bottom: 30px;
+  animation: flicker 1.5s infinite alternate;
 }
 
-h1 {
-  font-size: 2.5em;
-  margin: 0;
-  color: var(--accent-color);
-  text-shadow: var(--shadow-glow);
-}
-
+/* 🎮 Game Section */
 main h2 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
+  font-size: 1em;
   text-align: center;
-  color: var(--subtext-color);
+  color: var(--electric-blue);
+  text-shadow: var(--glow-blue);
+  margin-bottom: 20px;
 }
 
 .game-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
 }
 
 .game-item {
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius);
+  background-color: var(--color-card);
+  border-radius: var(--radius);
   padding: 15px;
   text-align: center;
-  transition: transform var(--transition-speed);
-  box-shadow: 0 0 5px rgba(255, 46, 136, 0.2);
+  border: 2px dashed var(--neon-lime);
+  box-shadow: var(--glow-lime);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
 }
 
 .game-item:hover {
-  transform: scale(1.03);
-  box-shadow: var(--shadow-glow);
+  transform: rotate(-1deg) scale(1.05);
+  box-shadow: var(--glow-purple), var(--glow-blue);
 }
 
 .game-item img {
   width: 100%;
   border-radius: 6px;
   margin-bottom: 10px;
+  image-rendering: pixelated;
+  border: 2px solid var(--electric-blue);
 }
 
-h3 {
-  font-size: 1.1em;
+.game-item h3 {
+  font-size: 0.8em;
+  color: var(--neon-lime);
+  text-shadow: var(--glow-lime);
   margin: 10px 0 5px;
-  color: var(--text-color);
 }
 
-p {
-  font-size: 0.9em;
-  color: var(--subtext-color);
+.game-item p {
+  font-size: 0.6em;
+  color: var(--color-subtext);
 }
 
+/* 🎯 Action Buttons */
 .action-footer {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 button {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  border: none;
+  background-color: var(--accent);
+  color: var(--color-text);
+  border: 2px solid var(--electric-blue);
   padding: 12px 24px;
-  font-size: 1em;
+  font-size: 0.7em;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color var(--transition-speed);
-  box-shadow: var(--shadow-glow);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--glow-purple);
 }
 
 button:hover {
   background-color: var(--accent-hover);
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: var(--glow-purple), var(--glow-blue);
 }
 
-/* Bottom Navigation */
-.bottom-nav {
+/* 🧭 Footer Navigation */
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--nav-bg);
+  background-color: #0f001a;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
-  border-top: 1px solid #222;
+  padding: 12px 0;
+  border-top: 2px solid var(--neon-purple);
+  box-shadow: var(--glow-purple);
   z-index: 1000;
 }
 
-.nav-item {
-  color: var(--subtext-color);
-  text-align: center;
-  font-size: 0.8em;
-  text-decoration: none;
-  transition: color var(--transition-speed);
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(var(--glow-blue));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
-.nav-item i {
-  font-size: 1.4em;
-  display: block;
-  margin-bottom: 4px;
+.nav-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(var(--glow-purple)) drop-shadow(var(--glow-lime));
 }
 
-.nav-item:hover,
-.nav-item.active {
-  color: var(--nav-active);
+/* 📱 Responsive Tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .game-list {
+    grid-template-columns: 1fr;
+  }
+
+  .action-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ✨ Flicker Animation */
+@keyframes flicker {
+  0% { opacity: 1; text-shadow: var(--glow-purple); }
+  50% { opacity: 0.8; text-shadow: none; }
+  100% { opacity: 1; text-shadow: var(--glow-purple); }
 }
