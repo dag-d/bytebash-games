@@ -1,0 +1,226 @@
+:root {
+  /* Neon Color Palette */
+  --color-bg: #0d0d0d;
+  --color-text: #ffffff;
+  --color-accent-cyan: #00ffff;
+  --color-accent-pink: #0da0c5;
+  --color-accent-green: #00ff99;
+  --color-muted: #cccccc;
+  --neon-purple:#c800ff;
+  --neon-lime: #aaff00;
+  --glow-purple: 0 0 12px var(--neon-purple);
+  --glow-cyan: 0 0 5px var(--color-accent-cyan);
+  --glow-lime: 0 0 12px var(--neon-lime);
+  --glow-purple: 0 0 12px var(--neon-purple);
+
+  /*Layout */
+  --max-width: 1000px;
+  --spacing-lg: 40px;
+  --spacing-md: 30px;
+  --spacing-sm: 20px;
+
+  /* Typography */
+  --font-main: 'Press Start 2P', cursive;
+  --font-size-lg: 2em;
+  --font-size-md: 1.5em;
+  --font-size-sm: 1.2em;
+  --font-size-xs: 1em;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-sm);
+}
+
+header {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+header h1 {
+  font-size: var(--font-size-lg);
+  color: var(--color-accent-cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.story, .team, .values {
+  margin-bottom: var(--spacing-lg);
+}
+
+.story h2, .team h2, .values h2 {
+  font-size: var(--font-size-md);
+  color: var(--color-accent-pink);
+  text-shadow: var(--glow-pink);
+}
+
+.story h3 {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-pink);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-main);
+}
+
+.story p {
+  font-size: var(--font-size-xs);
+  line-height: 1.6;
+  font-family: var(--font-main);
+}
+
+.team-member {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  margin: 0 1.5%;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent-cyan);
+}
+
+.team-member h3 {
+  font-size: var(--font-size-sm);
+  margin: 10px 0 5px;
+  color: var(--color-accent-green);
+}
+
+.team-member p {
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+}
+
+.values .value {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  margin: 0 1.5%;
+  margin:20px;
+  padding: var(--spacing-sm);
+  background-color: #222;
+  border: 2px solid var(--color-accent-pink);
+  border-radius: 5px;
+  color: var(--color-accent-pink);
+  text-shadow: 0 0 3px var(--color-accent-pink);
+}
+
+/* Footer Navigation */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #052f3a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 2px solid var(--neon-purple);
+  box-shadow: var(--glow-purple);
+  z-index: 1000;
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(var(--glow-blue));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.nav-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(var(--glow-purple)) 
+  drop-shadow(var(--glow-lime));
+}
+
+/* Responsive Design */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .latest-game,
+  .featured-games {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-card {
+    max-width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .game-card {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .buttons {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
