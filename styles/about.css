@@ -6,25 +6,28 @@
   --color-accent-pink: #0da0c5;
   --color-accent-green: #00ff99;
   --color-muted: #cccccc;
-  --neon-purple:#c800ff;
+  --neon-purple: #c800ff;
   --neon-lime: #aaff00;
   --glow-purple: 0 0 12px var(--neon-purple);
   --glow-cyan: 0 0 5px var(--color-accent-cyan);
   --glow-lime: 0 0 12px var(--neon-lime);
-  --glow-purple: 0 0 12px var(--neon-purple);
+  --glow-blue: 0 0 8px #00ccff;
 
-  /*Layout */
+  /* Layout */
   --max-width: 1000px;
   --spacing-lg: 40px;
   --spacing-md: 30px;
   --spacing-sm: 20px;
 
   /* Typography */
-  --font-main: 'Press Start 2P', cursive;
+  --font-main: 'VT323', monospace;
   --font-size-lg: 2em;
   --font-size-md: 1.5em;
   --font-size-sm: 1.2em;
   --font-size-xs: 1em;
+
+  /* Transitions */
+  --transition-fast: 0.3s ease;
 }
 
 body {
@@ -55,30 +58,44 @@ header h1 {
 
 .story, .team, .values {
   margin-bottom: var(--spacing-lg);
+  font-size: 25px;
 }
 
-.story h2, .team h2, .values h2 {
+.story h2, .values h2 {
   font-size: var(--font-size-md);
   color: var(--color-accent-pink);
-  text-shadow: var(--glow-pink);
+  text-shadow: var(--color-accent-pink);
+  text-align: center;
 }
 
 .story h3 {
-  font-size: var(--font-size-sm);
+  font-size: 30px;
   color: var(--color-accent-pink);
   margin-bottom: var(--spacing-sm);
-  font-family: var(--font-main);
 }
 
 .story p {
   font-size: var(--font-size-xs);
   line-height: 1.6;
-  font-family: var(--font-main);
+}
+
+.team h2 {
+  font-size: var(--font-size-md);
+  color: var(--color-accent-pink);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
 }
 
 .team-member {
-  display: inline-block;
-  width: 30%;
+  flex: 1 1 30%;
   text-align: center;
   margin: 0 1.5%;
 }
@@ -98,14 +115,14 @@ header h1 {
 
 .team-member p {
   font-size: var(--font-size-xs);
-  color: var(--color-muted);
+  color: var(--color-accent-cyan);
 }
+
 .values {
   background-color: var(--color-bg);
   padding: var(--spacing-lg);
   border-radius: 12px;
   text-align: center;
-  color: var(--color-text);
   box-shadow: 0 0 20px var(--color-accent-pink);
   max-width: var(--max-width);
   margin: 0 auto;
@@ -120,11 +137,10 @@ header h1 {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Roboto Mono', monospace;
   color: var(--color-muted);
   border: 2px solid var(--color-accent-cyan);
   box-shadow: var(--glow-cyan);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
 }
 
 .value:last-child {
@@ -137,7 +153,6 @@ header h1 {
   color: var(--color-accent-green);
   border-color: var(--neon-lime);
 }
-
 
 /* Footer Navigation */
 footer {
@@ -164,76 +179,36 @@ footer {
 
 .nav-icon:hover {
   transform: scale(1.2);
-  filter: drop-shadow(var(--glow-purple)) 
-  drop-shadow(var(--glow-lime));
+  filter: drop-shadow(var(--glow-purple)) drop-shadow(var(--glow-lime));
 }
 
 /* Responsive Design */
-
-/* Tablet (768px and below) */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
-  }
-
-  header p {
-    font-size: 1rem;
   }
 
   section {
     padding: 1.5rem;
   }
 
-  .latest-game,
-  .featured-games {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .game-card {
-    max-width: 90%;
-    margin-bottom: 1rem;
-  }
-
-  .buttons {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+  .team-member {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
   }
 
   footer {
-    flex-direction: row;
-    justify-content: space-around;
     padding: 0.5rem 1rem;
-  }
-
-  .nav-icon {
-    width: 28px;
-    height: 28px;
   }
 }
 
-/* Mobile (480px and below) */
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.5rem;
   }
 
-  header p {
-    font-size: 0.85rem;
-  }
-
   section {
     padding: 1rem;
-  }
-
-  .game-card {
-    padding: 0.75rem;
-    font-size: 0.85rem;
-  }
-
-  .buttons {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
   }
 
   .nav-icon {
@@ -247,4 +222,3 @@ footer {
     gap: 0.5rem;
   }
 }
-
