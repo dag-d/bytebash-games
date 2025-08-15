@@ -114,9 +114,10 @@ textarea:focus {
 }
 
 .social-links {
-   padding:40px 20px;
-  text-align: center;
-  margin: 40px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  text-align: right;
 }
 
 .social-links h2 {
@@ -124,50 +125,33 @@ textarea:focus {
   color: var(--accent-purple);
   text-shadow: var(--glow-purple);
   margin-bottom: 10px;
+  margin-top: 30px;
 }
 
-.social-links a {
-  display: inline-block;
-  margin: 5px 10px;
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 10px;
   color: var(--accent-cyan);
   text-decoration: none;
   text-shadow: var(--glow-cyan);
-  transition: color 0.3s ease;
+  padding: 4px 8px;
+  margin-bottom:90px ;
+} 
+
+.icon {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 4px var(--accent-cyan));
+  transition: transform 0.3s ease;
 }
 
-.social-links a:hover {
-  color: var(--accent-pink);
+.link:hover .icon {
+  transform: scale(1.2) rotate(5deg);
 }
 
-.link::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: drop-shadow(0 0 4px var(--electric-blue));
-
-}
-
-/* 🔗 Platform-specific icons */
-.discord::before {
-  background-image: url('/public/icons/discord.svg');
-}
-
-.twitter::before {
-  background-image: url('/public/icons/twitter\ x.svg');
-}
-
-.instagram::before {
-  background-image: url('/public/icons/Instagram.svg');
-}
-
+/* footer navigation */
 footer {
   position: fixed;
   bottom: 0;
