@@ -1,0 +1,247 @@
+:root {
+  --font-main: 'Press Start 2P', cursive;
+  --bg-dark: #0d0d0d;
+  --bg-card: #1a1a1a;
+  --text-light: #ffffff;
+  --accent-cyan: #00ffff;
+  --accent-pink: #ff00ff;
+   --neon-lime: #aaff00;
+  --accent-purple: #c800ff;
+  --glow-lime: 0 0 12px var(--neon-lime);
+  --glow-cyan: 0 0 8px var(--accent-cyan);
+  --glow-pink: 0 0 8px var(--accent-pink);
+  --glow-purple: 0 0 12px var(--accent-purple);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  overflow-y:auto
+}
+
+.container {
+  height:100vh ;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction:column;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 16px;
+  color: var(--accent-pink);
+  text-shadow: var(--glow-pink);
+}
+
+header p {
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.join-form {
+  background-color: var(--bg-card);
+  border: 2px solid var(--accent-purple);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--glow-purple);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 10px;
+  color: var(--accent-cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+input,
+select,
+textarea {
+  background-color: #111;
+  border: 2px solid var(--accent-cyan);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  font-size: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: var(--glow-cyan);
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  font-size: 10px;
+  color: var(--text-light);
+}
+
+.submit-button {
+  background-color: var(--bg-card);
+  border: 2px solid var(--accent-pink);
+  color: var(--text-light);
+  font-size: 10px;
+  padding: 10px;
+  cursor: pointer;
+  text-shadow: var(--glow-pink);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow-pink), 0 0 10px var(--accent-purple);
+}
+
+.social-links {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.social-links h2 {
+  font-size: 12px;
+  color: var(--accent-purple);
+  text-shadow: var(--glow-purple);
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 5px 10px;
+  font-size: 10px;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  text-shadow: var(--glow-cyan);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-pink);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #052f3a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 2px solid var(--neon-purple);
+  box-shadow: var(--glow-purple);
+  z-index: 1000;
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(var(--glow-blue));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.nav-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(var(--glow-purple)) drop-shadow(var(--glow-lime));
+}
+
+/* Responsive Design */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .latest-game,
+  .featured-games {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-card {
+    max-width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .game-card {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .buttons {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
