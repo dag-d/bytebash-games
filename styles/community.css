@@ -52,7 +52,6 @@ header p {
   border: 2px solid var(--accent-purple);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: var(--glow-purple);
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -61,7 +60,6 @@ header p {
 label {
   font-size: 10px;
   color: var(--accent-cyan);
-  text-shadow: var(--glow-cyan);
 }
 
 input,
