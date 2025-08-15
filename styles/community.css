@@ -114,6 +114,7 @@ textarea:focus {
 }
 
 .social-links {
+   padding:40px 20px;
   text-align: center;
   margin-top: 40px;
 }
@@ -137,6 +138,32 @@ textarea:focus {
 
 .social-links a:hover {
   color: var(--accent-pink);
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 🔗 Platform-specific icons */
+.discord::before {
+  background-image: url('/public/icons/discord.svg');
+}
+
+.twitter::before {
+  background-image: url('/public/icons/twitter\ x.svg');
+}
+
+.instagram::before {
+  background-image: url('/public/icons/Instagram.svg');
 }
 
 footer {
