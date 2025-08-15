@@ -103,7 +103,7 @@ main h2 {
   color: var(--color-subtext);
 }
 
-/* 🎯 Action Buttons */
+/* Action Buttons */
 .action-footer {
   display: flex;
   justify-content: center;
