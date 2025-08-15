@@ -116,7 +116,7 @@ textarea:focus {
 .social-links {
    padding:40px 20px;
   text-align: center;
-  margin-top: 40px;
+  margin: 40px;
 }
 
 .social-links h2 {
@@ -151,6 +151,8 @@ textarea:focus {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  filter: drop-shadow(0 0 4px var(--electric-blue));
+
 }
 
 /* 🔗 Platform-specific icons */

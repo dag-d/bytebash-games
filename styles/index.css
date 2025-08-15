@@ -89,6 +89,8 @@ section{
   font-size: 24px;
   cursor: pointer;
   font-family:sans-serif;
+  border-radius: 10px;
+  background-color: #052f3a;
 }
 .availability .right:hover{
   color:#a5c0da;
